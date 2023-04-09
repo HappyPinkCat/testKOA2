@@ -20,7 +20,7 @@ app.use(json()) //解析完转成对象形式 可以访问了
 app.use(logger()) //封装好的用于打印log的
 app.use(require('koa-static')(__dirname + '/public')) //把public目录注册成static了，public里头可以当静态资源访问
 
-app.use(views(__dirname + '/views', { //注册ejs否则当成静态文件对待了，#TODO 那react的话咋整
+app.use(views(__dirname + '/views', { //注册ejs模版，否则当成静态文件对待了，#TODO 那react的话咋整
     extension: 'ejs'
 }))
 
