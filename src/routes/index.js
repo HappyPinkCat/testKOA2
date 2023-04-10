@@ -1,8 +1,14 @@
 const router = require('koa-router')()
 
-router.get('/', async(ctx, next) => {
-    await ctx.render('index', {
-        title: 'Hello Koa 2!'
+router.get('/', async(ctx, next) => { //若不await，没读取完就返回 就不行
+    await ctx.render('index', { //app.js内注册过ejs了，仅需写名字index
+        title: 'Hello Koa 2!！！',
+        isMe: false,
+        blogList: [
+            { id: 1, title: 'hello a' },
+            { id: 2, title: 'hello b' },
+            { id: 3, title: 'hello c' }
+        ]
     })
 })
 

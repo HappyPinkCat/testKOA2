@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>EJS Welcome to <%= title %></p>
-  </body>
+</head>
+
+<body>
+    <h1>
+        <%= title %>
+    </h1>
+    <p>EJS Welcome to
+        <%= title %>
+    </p>
+    <p>
+        <%=locals.msg_err%>
+            <!-- 就不报错，用’ ‘占 -->
+    </p>
+
+    <hr>
+    <%-include('widgets/user-info',{isMe})%>
+        <%-include('widgets/blog-list',{blogList})%>
+</body>
+
 </html>

@@ -9,7 +9,7 @@ const logger = require('koa-logger')
 const index = require('./routes/index')
 const users = require('./routes/users')
 
-// error handler——页面上显示
+// error handler——页面上显示!好用！
 onerror(app)
 
 // middlewares
