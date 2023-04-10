@@ -13,7 +13,7 @@ const users = require('./routes/users')
 onerror(app)
 
 // middlewares
-app.use(bodyparser({ //能parser这几种格式
+app.use(bodyparser({ //Koa原生不支持body参数解析，bodyparser能parser这几种格式
     enableTypes: ['json', 'form', 'text']
 }))
 app.use(json()) //解析完转成对象形式 可以访问了
@@ -32,7 +32,7 @@ app.use(views(__dirname + '/views', { //注册ejs模版，否则当成静态文�
 //     console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 // })
 
-// routes
+// routes：注册中间件哈~   routes()注册路由使路由生效  allowedMethods()允许报方法的错误
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 
